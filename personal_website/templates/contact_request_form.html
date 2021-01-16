@@ -1,0 +1,7 @@
+{% extends "contact.html" %} {% load crispy_forms_tags %} {% block form_content %}
+<h2>My form here!!</h2>
+<form method="post">
+    {% csrf_token %} {{ form }}
+    <button type="submit" class="btn btn-success">Send Request</button>
+</form>
+{% endblock %}

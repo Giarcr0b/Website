@@ -1,0 +1,161 @@
+ {% extends "base.html" %} {% load static %} {% block page_content %}
+
+
+<!--Carousel
+	================================================== -->
+
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+        <!-- Remove imglist word if you don't want gray pictures-->
+        <!-- 1st item-->
+
+        <div class="carousel-item active">
+            <div class="col text-center">
+                <h2>Services</h2>
+
+            </div>
+            <div class="card-deck">
+                {% for service in service_list %}
+
+                <div class="card mb-4 text-center home-slider-card">
+                    <h6 class="card-header">{{ service.name }}</h6>
+                    {% if service.image.url != None %}
+                    <img class="card-img" src="{{ service.image.url }}"> {% endif %}
+                    <div class="card-body">
+                        <p class="card-title">{{ service.title }}</p>
+                        <!-- <p class="card-text">{{ service.description }}</p> -->
+                        <a href="{% url 'services:detail' service.id %}" class="btn btn-card">
+                                Read More
+                            </a>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <div class="carousel-item">
+            <div class="col text-center">
+                <h2>Projects</h2>
+
+            </div>
+            <div class="card-deck">
+                {% for project in project_list %}
+
+                <div class="card mb-4 text-center home-slider-card">
+                    <h6 class="card-header">{{ project.title }}</h6>
+                    {% if project.image.url != None %}
+                    <img class="card-img" src="{{ project.image.url }}"> {% endif %}
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">{{ project.title }}</h5> -->
+                        <p class="card-text">{{ project.description }}</p>
+                        <a href="{% url 'projects:detail' project.id %}" class="btn btn-card">
+                                Read More
+                            </a>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <div class="carousel-item">
+            <div class="col text-center">
+                <h2>Testimonials</h2>
+
+            </div>
+            <div class="card-deck">
+                {% for testimonial in testimonial_list %}
+
+                <div class="card mb-4 text-center home-slider-card" style="min-height: 24rem;">
+                    <h6 class="card-header">{{ testimonial.title }}</h6>
+                    <div class="card-body">
+                        <p class="card-title">{{ testimonial.body|truncatewords:20 }}</p>
+                        <!-- <p class="card-text">{{ service.description }}</p> -->
+
+                        <a href="{% url 'main:testimonials' %}" class="btn btn-card">
+                                Read More
+                            </a>
+                    </div>
+                    <div class="card-footer">{{ testimonial.author }}</div>
+                </div>
+
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+
+</div>
+
+
+<br/>
+<!-- 3 columns under carousel 
+	================================================== -->
+<div class="row home-cont">
+    <div class="card-deck">
+        <!-- 1 column-->
+        <div class="col-sm-4">
+            <div class="card card-home text-center">
+                <div class="card-body">
+                    <h3 class="card-title">Professional</h3>
+                    <p class="card-text">
+                        Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                    </p>
+                    <p>
+                        <a class="btn btn-info" href="{% url 'main:about' %}">More about me</a>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- 2nd column-->
+        <div class="col-sm-4">
+            <div class="card card-home text-center">
+                <div class="card-body">
+                    <h3 class="card-title">Aesthetic</h3>
+                    <p class="card-text">
+                        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimen.
+                    </p>
+                    <p>
+                        <a class="btn btn-info" href="{% url 'projects:index' %}">Projects</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- 3rd column-->
+        <div class="col-sm-4">
+            <div class="card card-home text-center">
+                <div class="card-body">
+                    <h3 class="card-title">Responsive</h3>
+                    <p class="card-text">
+                        Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis.
+                    </p>
+                    <p>
+                        <a class="btn btn-info" href="{% url 'main:contact' %}">Get in touch</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %} {% block form_content %}<br/>{% include "main/get_in_touch.html" %}{% endblock %}

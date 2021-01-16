@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% load static %} {% block page_content %}
+<h1>Services</h1>
+
+
+<div class="row">
+
+    {% for service in service_list %}
+    <div class="col-sm-4">
+        <div class="card mb-4">
+            <h4 class="card-header">{{ service.name }}</h4>
+            {% if service.image.url != None %}
+            <img class="card-img-top" src="{{ service.image.url }}"> {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ service.title }}</h5>
+                <p class="card-text">{{ service.description|truncatewords:20 }}</p>
+                <a href="{% url 'services:detail' service.id %}" class="btn btn-card">
+                    Read More
+                </a>
+            </div>
+            <div class="card-footer">
+                <h3>From £{{ service.rate }}</h3>
+            </div>
+        </div>
+    </div>
+
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}{% block form_content %}<br/>{% include "main/get_in_touch.html" %}{% endblock %}

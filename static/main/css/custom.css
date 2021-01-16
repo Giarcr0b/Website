@@ -1,0 +1,372 @@
+/* Site wide custom CSS */
+
+body {
+    background-color: #aaabb8;
+}
+
+.btn-card {
+    background-color: #29648a;
+    color: white;
+}
+
+.btn-card:hover {
+    background-color: #464866;
+    color: white;
+}
+
+.btn-info {
+    background-color: whitesmoke;
+    border-color: #8EE4AF;
+    color: black;
+}
+
+.btn-info:hover {
+    border-color: #8EE4AF;
+    background-color: white;
+    color: black;
+}
+
+.card {
+    /* background-color: #265077;
+    color: white;
+    border-color: #24305E; */
+    border-width: medium;
+}
+
+.card-form {
+    background-color: #464866;
+    color: white;
+    border-color: #25274d;
+    border-width: medium;
+}
+
+.card-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.jumbotron {
+    background-color: #464866;
+    color: white;
+}
+
+.service-bgrnd {
+    background-color: #1E4258;
+}
+
+nav {
+    background-color: #29648a;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-toggler {
+    width: 47px;
+    height: 34px;
+}
+
+.navbar-toggler .line {
+    width: 100%;
+    float: left;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+
+/* Home page CSS classes */
+
+.home-slider-card {
+    min-height: 24rem;
+}
+
+.home-slider-card:hover {
+    transform: scale(0.95);
+}
+
+.home-info-card {}
+
+.home-cont {
+    position: relative;
+}
+
+.card-home {
+    min-height: 18rem;
+    background-color: #29648a;
+    color: black;
+}
+
+.card-home:hover {
+    transform: scale(1.05);
+}
+
+
+/* About page CSS classes */
+
+.about-jumbotron {}
+
+
+/* Services page CSS classes */
+
+.services-index-card {}
+
+.services-jumbotron {}
+
+
+/* Site colours CSS */
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+    color: white;
+    border-style: groove;
+    border-radius: 5px;
+}
+
+.badge-info {
+    background-color: #25274d;
+}
+
+a.badge-info:hover,
+a.badge-info:focus {
+    color: black;
+    background-color: #aaabb8;
+}
+
+.site-footer {
+    background-color: #25274d;
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #AAABBB;
+}
+
+.site-footer hr {
+    border-top-color: #bbb;
+    opacity: 0.5
+}
+
+.site-footer hr.small {
+    margin: 20px 0
+}
+
+.site-footer h6 {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 2px
+}
+
+.site-footer a {
+    color: #737373;
+}
+
+.site-footer a:hover {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.footer-links {
+    padding-left: 0;
+    list-style: none
+}
+
+.footer-links li {
+    display: block
+}
+
+.footer-links a {
+    color: #737373
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.footer-links.inline li {
+    display: inline-block
+}
+
+.site-footer .social-icons {
+    text-align: right
+}
+
+.site-footer .social-icons a {
+    width: 48px;
+    height: 48px;
+    line-height: 40px;
+    margin-left: 6px;
+    margin-right: 0;
+    border-radius: 100%;
+    background-color: #33353d
+}
+
+.copyright-text {
+    margin: 0
+}
+
+@media (max-width:991px) {
+    .site-footer [class^=col-] {
+        margin-bottom: 30px
+    }
+}
+
+@media (max-width:767px) {
+    .site-footer {
+        padding-bottom: 0
+    }
+    .site-footer .copyright-text,
+    .site-footer .social-icons {
+        text-align: center
+    }
+}
+
+.social-icons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-bottom: 4px
+}
+
+.social-icons li.title {
+    margin-right: 15px;
+    text-transform: uppercase;
+    color: #96a2b2;
+    font-weight: 700;
+    font-size: 13px
+}
+
+.social-icons a {
+    background-color: #eceeef;
+    color: #818a91;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 44px;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    margin-right: 8px;
+    border-radius: 100%;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear
+}
+
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+    color: #fff;
+    background-color: #29aafe
+}
+
+.social-icons.size-sm a {
+    line-height: 34px;
+    height: 48px;
+    width: 48px;
+    font-size: 14px
+}
+
+.social-icons a.facebook:hover {
+    background-color: #3b5998
+}
+
+.social-icons a.twitter:hover {
+    background-color: #00aced
+}
+
+.social-icons a.linkedin:hover {
+    background-color: #007bb6
+}
+
+.social-icons a.dribbble:hover {
+    background-color: #ea4c89
+}
+
+@media (max-width:767px) {
+    .social-icons li.title {
+        display: block;
+        margin-right: 0;
+        font-weight: 600
+    }
+}
+
+.facebook {
+    background: url('main/img/socialicons/facebook.png') no-repeat;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    float: none;
+    text-align: center;
+    margin-right: 0px;
+    opacity: 0.6;
+}
+
+.facebook:hover {
+    opacity: 1.0;
+}
+
+.instagram {
+    background: url('main/img/socialicons/instagram.png') no-repeat;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    float: none;
+    margin-right: 0px;
+    opacity: 0.6;
+}
+
+.instagram:hover {
+    opacity: 1.0;
+}
+
+.twitter {
+    background: url('main/img/socialicons/twitter.png') no-repeat;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    float: left;
+    margin-right: 5px;
+    opacity: 0.6;
+}
+
+.twitter:hover {
+    opacity: 1.0;
+}
+
+.linkedin {
+    background: url('main/img/socialicons/linkedin.png') no-repeat;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    float: left;
+    opacity: 0.6;
+}
+
+.linkedin:hover {
+    opacity: 1.0;
+}
+
+
+/* Carousel CSS */
+
+.carousel-control-prev,
+.carousel-control-next {
+    bottom: 90%;
+    filter: invert(100%);
+    /* Aligns it at the top */
+}
+
+.carousel-indicators {
+    bottom: 85%;
+    filter: invert(100%);
+    /* Aligns it at the top */
+}

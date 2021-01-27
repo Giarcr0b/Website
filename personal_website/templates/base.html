@@ -16,27 +16,44 @@
 
 <body>
     <div class="container">
+        <div class="card card-banner">
+            <div class="row">
+                <div class="col-sm-3">
+                    <a class="navbar-brand" href="#"><img src="{% static 'logo.png' %} " width="160" height="60" alt="" loading="lazy"></a>
+                </div>
+                <div class="col-sm-9 align-self-center">
+                    <h2>{{ author.business }}</h2>
+                </div>
+            </div>
+            
+        </div>
+    
         <nav class="navbar navbar-expand-sm rounded">
+        
+       
             <!-- <a class="navbar-brand" href="#"><img src="{% static 'logo.png' %} " width="160" height="145" alt="" loading="lazy"></a> -->
             {% block navigation %}
-            <a class="badge badge-info" href="{% url 'main:about' %}">
+            <!-- <a class="badge badge-info" href="{% url 'main:about' %}">
 
                 <p class="lead text-center">{{ author.firstName }}<br/>{{ author.lastName }}</p>
 
 
-            </a>
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="line"></span> 
-                <span class="line"></span> 
-                <span class="line"></span>
-            </button>
+            </a> -->
+            <div class=" container justify-content-end">
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="line"></span> 
+                    <span class="line"></span> 
+                    <span class="line"></span>
+                </button>
+            </div>
+            
 
 
 
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <div class="container justify-content-sm-center">
+                <div class="container justify-content-center">
                     <ul class="navbar-nav lead">
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'main:index' %}">Home <span
@@ -63,7 +80,7 @@
             </div>
             {% endblock navigation %}
 
-
+        
 
         </nav>
     </div>
@@ -71,7 +88,7 @@
     <div class="container">
         <br/>
         <!-- Main hero unit for a primary marketing message or call to action -->
-        <div class="jumbotron">
+        <div class="jumbotron base-jumbotron">
             <h1 class="text-center">{{ author.business }}<br>{{ title }}</h1>
             <p class="lead text-center">
                 {{ author.identity }}
@@ -90,31 +107,18 @@
         <footer class="site-footer rounded">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 col-md-6">
+                    <div class="col-sm-12 col-md-9">
                         <h6>About</h6>
-                        <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers
-                            build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
-                    </div>
-
-                    <div class="col-xs-6 col-md-3">
-                        <h6>Categories</h6>
-                        <ul class="footer-links">
-                            <li><a href="#">C</a></li>
-                            <li><a href="#">UI Design</a></li>
-                            <li><a href="#">PHP</a></li>
-                            <li><a href="#">Java</a></li>
-                            <li><a href="#">Android</a></li>
-                            <li><a href="#">Templates</a></li>
-                        </ul>
+                        <p class="text-justify">{{ author.identity }}</p>
                     </div>
 
                     <div class="col-xs-6 col-md-3">
                         <h6>Quick Links</h6>
                         <ul class="footer-links">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Contribute</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="{% url 'main:about' %}">About</a></li>
+                            <li><a href="{% url 'main:contact' %}">Contact</a></li>
+                            <li><a href="{% url 'services:index' %}">Services</a></li>
+                            <li><a href="{% url 'main:testimonials' %}">Testimonials</a></li>
                             <li><a href="#">Sitemap</a></li>
                         </ul>
                     </div>
@@ -125,16 +129,16 @@
                 <div class="row">
                     <div class="col-md-8 col-sm-6 col-xs-12">
                         <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
-                            <a href="#">Craig Robertson</a>.
+                            <a href="{% url 'main:about' %}">{{ author.firstName }} {{ author.lastName }}</a>.
                         </p>
                     </div>
 
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <ul class="social-icons">
                             <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a class="instagram" href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a class="linkedin" href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a class="twitter" href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a class="instagram" href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>

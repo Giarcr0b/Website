@@ -1,3 +1,5 @@
+
+
 /* Site wide custom CSS */
 
 body {
@@ -40,12 +42,17 @@ body {
     border-width: medium;
 }
 
+.card-banner {
+    background-color:  #25274d;
+    color: white;
+}
+
 .card-img {
     height: 200px;
     object-fit: cover;
 }
 
-.jumbotron {
+.base-jumbotron {
     background-color: #464866;
     color: white;
 }
@@ -106,6 +113,18 @@ nav {
 /* About page CSS classes */
 
 .about-jumbotron {}
+
+/* Contact page CSS classes */
+
+.contact-jumbotron {
+    background-color: #29648a;
+    color: white;
+}
+
+.btn-form {
+    background-color: #2E9CCA;
+    color: white;
+}
 
 
 /* Services page CSS classes */

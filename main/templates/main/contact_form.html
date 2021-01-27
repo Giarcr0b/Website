@@ -1,9 +1,10 @@
 {% extends "base.html" %} {% load widget_tweaks %} {% block page_content %}
 <h1 class="text-center">Contact Form</h1>
-<div class="jumbotron">
+<p class="lead">If you would like to get in touch to discuss a service or project build you require please fill out the form below. Thanks.</p>
+<div class="contact-jumbotron jumbotron">
 
     <form method="post" novalidate>
         {% csrf_token %} {% include 'main/includes/form.html' %}
-        <button type="submit" class="btn btn-card">Send</button>
+        <button type="submit" class="btn btn-form">Send</button>
     </form>
 </div> {% endblock %}

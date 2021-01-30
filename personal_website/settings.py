@@ -40,11 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
+    'services.apps.ServicesConfig',
     'main.apps.MainConfig',
     'projects.apps.ProjectsConfig',
     'blog.apps.BlogConfig',
-    'services.apps.ServicesConfig',
-
+    
     'crispy_forms',
     'widget_tweaks',
 ]
@@ -84,12 +85,29 @@ WSGI_APPLICATION = 'personal_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+DB_NAME = config('DB_NAME')
+DB_USER = config('DB_USER')
+DB_PASSWORD = config('DB_PASSWORD')
 DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+# SQLlite database conection
+
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+ """
 
 
 # Password validation

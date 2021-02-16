@@ -22,6 +22,7 @@ class indexView(generic.FormView):
     form_class = GetInTouch
     initial = {'key': 'value'}
     template_name = 'main/index.html'
+    success_url="/get_in_touch_confirm"
     
 
     def get_context_data(self, **kwargs):
@@ -44,6 +45,7 @@ class AboutView(generic.FormView):
     initial = {'key': 'value'}
     model = Author
     template_name = 'main/about.html'
+    success_url="/get_in_touch_confirm"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -57,6 +59,7 @@ class TestimonialView(generic.FormView):
     form_class = GetInTouch
     initial = {'key': 'value'}
     template_name = 'main/testimonials.html'
+    success_url="/get_in_touch_confirm"
     
     
 
@@ -88,6 +91,8 @@ class ContactView(generic.FormView):
     form_class = ContactForm
     initial = {'key': 'value'}
     template_name = 'main/contact_form.html'
+    success_url="/get_in_touch_confirm"
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -156,8 +161,15 @@ def get_in_touch(request):
                 recipients.append(sender)
 
             send_mail(subject, message, sender, recipients)
-            return redirect('main:index')
+            # return redirect('index')
     else:
         form = GetInTouch()
 
     return render(request, 'main/get_in_touch.html', {'form': form})
+
+def get_in_touch_confirm(request):
+
+    context = {
+        'title': 'Confirmation',
+    }
+    return render(request, 'main/get_in_touch_confirm.html', context)

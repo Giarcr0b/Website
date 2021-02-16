@@ -25,4 +25,5 @@ urlpatterns = [
     path("contact_form/", views.ContactView.as_view(), name="contact"),
     path("testimonials/", views.TestimonialView.as_view(), name="testimonials"),
     path("get_in_touch/", views.get_in_touch, name="get_in_touch"),
+    path("get_in_touch_confirm/", views.get_in_touch_confirm, name="confirm"),
 ] 

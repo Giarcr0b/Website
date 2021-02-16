@@ -2,17 +2,31 @@
 
 /* Site wide custom CSS */
 
+
 body {
-    background-color: #aaabb8;
+    background: rgb(0,124,199);
+background: linear-gradient(155deg, rgba(0,124,199,1) 0%, rgba(238,251,251,1) 45%, rgba(0,124,199,1) 100%);
 }
 
+.bg {
+    height: 100vmax;
+    width: 100%;
+    bottom: inherit;
+    background-color: #eefbfb;
+    -webkit-clip-path: polygon(12% 10%, 82% 17%, 92% 63%, 28% 85%, 79% 95%, 10% 49%, 59% 5%, 98% 37%, 17% 75%, 72% 80%, 48% 29%, 68% 34%, 82% 6%, 14% 32%, 12% 99%, 27% 92%, 82% 80%, 38% 52%, 24% 56%);
+clip-path: polygon(12% 10%, 82% 17%, 92% 63%, 28% 85%, 79% 95%, 10% 49%, 59% 5%, 98% 37%, 17% 75%, 72% 80%, 48% 29%, 68% 34%, 82% 6%, 14% 32%, 12% 99%, 27% 92%, 82% 80%, 38% 52%, 24% 56%);
+    position: absolute;
+    z-index: -1;
+   
+}
+/* was aaabb8 */
 .btn-card {
-    background-color: #29648a;
+    background-color:#12232e;
     color: white;
 }
 
 .btn-card:hover {
-    background-color: #464866;
+    background-color: #203647;
     color: white;
 }
 
@@ -28,23 +42,62 @@ body {
     color: black;
 }
 
-.card {
-    /* background-color: #265077;
+.btn-get-in-touch {
+    background-color: #203647;
     color: white;
+}
+
+.container-banner {
+    padding-right:0px;
+    padding-left:0px;
+    margin-right:0px;
+    margin-left:0px;
+    overflow: auto;
+}
+
+.container-menu {
+
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.container-colapsed-menu {
+
+    
+    border-style: none;
+    border-radius: 0px;
+}
+
+.card {
+    background-color: white;
+    /* color: white;
     border-color: #24305E; */
     border-width: medium;
 }
 
 .card-form {
-    background-color: #464866;
+    background-color: #007cc7;
     color: white;
-    border-color: #25274d;
+    border-color: #203647;
     border-width: medium;
 }
 
 .card-banner {
-    background-color:  #25274d;
+    background: url('main/img/backgrounds/banner.png');
+    background-color:  #007cc7;
+    background-blend-mode:luminosity;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
     color: white;
+    margin: auto;
+    border: none;
+}
+
+.banner-text {
+    margin: auto;
 }
 
 .card-img {
@@ -53,7 +106,7 @@ body {
 }
 
 .base-jumbotron {
-    background-color: #464866;
+    background-color: #007cc7;
     color: white;
 }
 
@@ -62,7 +115,7 @@ body {
 }
 
 nav {
-    background-color: #29648a;
+    background-color: #203647;
 }
 
 .nav-link {
@@ -86,10 +139,12 @@ nav {
 /* Home page CSS classes */
 
 .home-slider-card {
+    background-color:white;
     min-height: 24rem;
 }
 
 .home-slider-card:hover {
+
     transform: scale(0.95);
 }
 
@@ -101,7 +156,7 @@ nav {
 
 .card-home {
     min-height: 18rem;
-    background-color: #29648a;
+    background-color: #4DA8DA;
     color: black;
 }
 
@@ -109,39 +164,69 @@ nav {
     transform: scale(1.05);
 }
 
+.project-img {
+
+    background-color: #007cc7;
+    background-blend-mode: screen;
+}
+
 
 /* About page CSS classes */
 
-.about-jumbotron {}
+.about-jumbotron {
+    background-color: #4DA8DA;
+    color: black;
+}
 
 /* Contact page CSS classes */
 
 .contact-jumbotron {
-    background-color: #29648a;
+    background-color: #203647;
     color: white;
+    /* border-style: solid;
+    border-color: #007cc7;
+    border-width: medium; */
+
 }
 
 .btn-form {
-    background-color: #2E9CCA;
+    background-color: #007cc7;
     color: white;
 }
 
 
 /* Services page CSS classes */
 
-.services-index-card {}
+.services-index-card {
+    border-color:  #4DA8DA;
+}
 
 .services-jumbotron {}
+
+/* Testimonials page CSS classes */
+
+.testimonials-index-card { 
+    border-color:  #4DA8DA;
+}
+
+.services-jumbotron {}
+
 
 
 /* Site colours CSS */
 
 .navbar-nav .nav-item.active .nav-link,
-.navbar-nav .nav-item:hover .nav-link {
+.navbar-nav .nav-link {
     color: white;
-    border-style: groove;
-    border-radius: 5px;
+    /* border-style: groove;
+    border-radius: 5px; */
 }
+
+.nav-link:hover {
+
+    color: #4DA8DA;
+}
+
 
 .badge-info {
     background-color: #25274d;
@@ -154,7 +239,7 @@ a.badge-info:focus {
 }
 
 .site-footer {
-    background-color: #25274d;
+    background-color: #12232e;
     padding: 45px 0 20px;
     font-size: 15px;
     line-height: 24px;

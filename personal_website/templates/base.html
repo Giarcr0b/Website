@@ -10,97 +10,92 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'custom.css' %}">
-    {% block stylesheet %} {% endblock stylesheet%}
+    {% block stylesheet %}
+    
+     {% endblock stylesheet %}
 
     <title>{{ title }}</title>
 </head>
 
 <body>
-    {% block body %}
-    <div class="container">
+    <div></div>
+    <div class="container-fluid container-banner">
         <div class="card card-banner">
-            <div class="row">
-                <div class="col-sm-3">
-                    <a class="navbar-brand" href="#"><img src="{% static 'logo.png' %} " width="160" height="60" alt="" loading="lazy"></a>
-                </div>
-                <div class="col-sm-9 align-self-center">
-                    <h2>{{ author.business }}</h2>
-                </div>
-            </div>
             
+                <div class="col-sm-8 align-self-center banner-text">
+                    <h1 class="text-center display-3">{{ author.business }}</h1>
+                </div>
+                
+                
         </div>
-    
-        <nav class="navbar navbar-expand-sm rounded">
+        <br/>
+        <div class="container">
         
-       
-            <!-- <a class="navbar-brand" href="#"><img src="{% static 'logo.png' %} " width="160" height="145" alt="" loading="lazy"></a> -->
+            {% block body %}
             {% block navigation %}
-            <!-- <a class="badge badge-info" href="{% url 'main:about' %}">
-
-                <p class="lead text-center">{{ author.firstName }}<br/>{{ author.lastName }}</p>
-
-
-            </a> -->
-            <div class=" container justify-content-end">
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="line"></span> 
-                    <span class="line"></span> 
-                    <span class="line"></span>
-                </button>
-            </div>
-            
-
-
-
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <div class="container justify-content-center">
-                    <ul class="navbar-nav lead">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main:index' %}">Home <span
-                                                class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main:about' %}">About</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="{% url 'blog:index' %}">Blog</a>
-                        </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'services:index' %}">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main:testimonials' %}">Testimonials</a>
-                        </li>
-                        <!--   -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main:contact' %}">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            {% endblock navigation %}
-
+            <nav class="navbar navbar-expand-sm rounded">
         
-
-        </nav>
+                <div class="container-colapsed-menu">
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="line"></span> 
+                        <span class="line"></span> 
+                        <span class="line"></span>
+                    </button>
+                </div>
+                
+    
+    
+    
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+                    <div class="container">
+                        <ul class="navbar-nav lead container-menu">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{% url 'main:index' %}">Home <span
+                                                    class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'main:about' %}">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'services:index' %}">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'main:testimonials' %}">Testimonials</a>
+                            </li>
+                            <!--   -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'main:contact' %}">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% endblock navigation %}
+    
+            
+    
+            </nav>
+        </div>      
+    
     </div>
+    
 
     <div class="container">
         <br/>
         <!-- Main hero unit for a primary marketing message or call to action -->
         <div class="jumbotron base-jumbotron">
-            <h1 class="text-center">{{ author.business }}<br>{{ title }}</h1>
+            <h1 class="text-center">{{ author.business }}</h1>
             <p class="lead text-center">
                 {{ author.identity }}
             </p>
+            <h2 class="text-center">{{ title }}</h2>
         </div>
 
         {% block page_content %}{% endblock %} {% block form_content%}{% endblock %}
 
     </div>
-
+   
     <!-- Footer 
 ================================================== -->
     <!-- Site footer -->
@@ -150,8 +145,8 @@
     </div>
 
 
-
-{% endblock body %}
+    {% endblock body %}
+    
 </body>
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

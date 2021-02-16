@@ -1,10 +1,31 @@
 {% extends "base.html" %} {% load widget_tweaks %} {% block page_content %}
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">How to reach us</h3>
+        <div class="flex row">
+            <div class="flex col-sm-6">
+        <h5 class="card-subtitle mb-2 text-muted">Contact details</h5>
+        <p class="card-text">Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+        <p class="card-text">Mobile: {{ author.mobile }}</p>
+    </div>
+    <div class="flex col-sm-6">
+        <h5 class="card-subtitle mb-2 text-muted">Social Links</h5>
+        <a href="#" class="card-link">Facebook</a>
+        <a href="#" class="card-link">LinkedIn</a>
+    </div>
+</div>
+</div>
+</div>
+<br>
 <h1 class="text-center">Contact Form</h1>
 <p class="lead">If you would like to get in touch to discuss a service or project build you require please fill out the form below. Thanks.</p>
 <div class="contact-jumbotron jumbotron">
 
     <form method="post" novalidate>
         {% csrf_token %} {% include 'main/includes/form.html' %}
+        <div class="col-sm-12 text-right">
         <button type="submit" class="btn btn-form">Send</button>
+    </div>
     </form>
 </div> {% endblock %}

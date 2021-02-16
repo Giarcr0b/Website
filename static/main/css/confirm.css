@@ -1,4 +1,12 @@
 body {
+    /* background-image: url('main/img/email-pattern.png'); */
+    
+    min-height: 100vh;
+   
 
-    background-image: url();
+}
+.message-box {
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }

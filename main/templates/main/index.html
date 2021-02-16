@@ -52,7 +52,8 @@
                 <div class="card mb-4 text-center home-slider-card">
                     <h6 class="card-header">{{ project.title }}</h6>
                     {% if project.image.url != None %}
-                    <img class="card-img" src="{{ project.image.url }}"> {% endif %}
+                    <img class="card-img project-img" src="{{ project.image.url }}" style="background-color: #007cc7;
+                    background-blend-mode: screen;"> {% endif %}
                     <div class="card-body">
                         <!-- <h5 class="card-title">{{ project.title }}</h5> -->
                         <p class="card-text">{{ project.description }}</p>

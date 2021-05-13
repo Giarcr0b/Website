@@ -79,7 +79,7 @@
                 <div class="card mb-4 text-center home-slider-card" style="min-height: 24rem;">
                     <h6 class="card-header">{{ testimonial.title }}</h6>
                     <div class="card-body">
-                        <p class="card-title">{{ testimonial.body|truncatewords:20 }}</p>
+                        <p class="card-title">{{ testimonial.body }}</p>
                         <!-- <p class="card-text">{{ service.description }}</p> -->
 
                         <a href="{% url 'main:testimonials' %}" class="btn btn-card">
@@ -159,4 +159,4 @@
         </div>
     </div>
 </div>
-{% endblock %} {% block form_content %}<br/>{% include "main/get_in_touch.html" %}{% endblock %}
+{% endblock %}{% block form_content %}<br/>{% include "main/get_in_touch.html" %}{% endblock %}

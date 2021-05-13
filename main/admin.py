@@ -8,3 +8,4 @@ admin.site.register(Testimonial)
 admin.site.register(Author)
 
 admin.site.register(Contact)
+

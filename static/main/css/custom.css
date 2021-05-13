@@ -87,10 +87,10 @@ clip-path: polygon(12% 10%, 82% 17%, 92% 63%, 28% 85%, 79% 95%, 10% 49%, 59% 5%,
     background: url('main/img/backgrounds/banner.png');
     background-color:  #007cc7;
     background-blend-mode:luminosity;
-    height: 200px;
+    height:auto;
     background-position: center;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     color: white;
     margin: auto;
     border: none;
@@ -98,6 +98,7 @@ clip-path: polygon(12% 10%, 82% 17%, 92% 63%, 28% 85%, 79% 95%, 10% 49%, 59% 5%,
 
 .banner-text {
     margin: auto;
+    
 }
 
 .card-img {
@@ -135,6 +136,32 @@ nav {
     margin-bottom: 5px;
 }
 
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: fit-content;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .collapsible:hover {
+    background-color:blue;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+      position: relative;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      
+  }
 
 /* Home page CSS classes */
 
@@ -199,6 +226,10 @@ nav {
 
 .services-index-card {
     border-color:  #4DA8DA;
+}
+
+.service-card-body{
+    min-height: 220px;
 }
 
 .services-jumbotron {}
@@ -424,6 +455,7 @@ a.badge-info:focus {
     height: 48px;
     cursor: pointer;
     float: none;
+    text-align: center;
     margin-right: 0px;
     opacity: 0.6;
 }
@@ -437,8 +469,9 @@ a.badge-info:focus {
     width: 48px;
     height: 48px;
     cursor: pointer;
-    float: left;
-    margin-right: 5px;
+    float: none;
+    text-align: center;
+    margin-right: 0px;
     opacity: 0.6;
 }
 
@@ -451,7 +484,9 @@ a.badge-info:focus {
     width: 48px;
     height: 48px;
     cursor: pointer;
-    float: left;
+    float: none;
+    text-align: center;
+    margin-right: 0px;
     opacity: 0.6;
 }
 

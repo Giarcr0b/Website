@@ -45,3 +45,4 @@ class Contact(models.Model):
 
     def get_absolute_url(self):
         return reverse('main:contact')
+

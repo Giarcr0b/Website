@@ -1,4 +1,5 @@
  {% load widget_tweaks %}
+ 
 <div class="card card-form">
     <div class="card-body">
     <p class="lead text-center">
@@ -6,7 +7,6 @@
     </p>
     <form method="post" novalidate>
         {% csrf_token %} 
-        <!-- {% include 'main/includes/form.html' %} -->
         <div class="row">
         {% for field in form %}
         <div class="col-sm-6">
@@ -24,11 +24,13 @@
             </div>
         </div>
         {% endfor %}
+        <div class="col-sm-6 text-right">
+            <button type="submit" class="btn btn-get-in-touch">Get in touch</button>
+        </div>
     </div>
-    <div class="col-sm-12 text-right">
-        <button type="submit" class="btn btn-get-in-touch">Get in touch</button>
-    </div>
+    
     </form>
 </div>
 </div>
+
 <br/>

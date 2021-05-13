@@ -13,4 +13,32 @@
         <p>{{ service.description }}</p>
     </div>
 </div>
+{% if components %}
+<br/>
+<h5>How we can help</h5>
+{% endif %}
+<div class="row">
+    {% for component in components %}
+    <div class="col-sm-12">
+        <div class="card mb-4 services-index-card">
+            
+                <h4 class="card-header">
+                    {{ component.name }}
+                </h4>
+            
+            <div class="card-body">
+                <p class="card-text">
+                    {{ component.description }}
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+
 {% endblock %}{% block form_content %}<br/>{% include "main/get_in_touch.html" %}{% endblock %}

@@ -1,7 +1,7 @@
 body {
     /* background-image: url('main/img/email-pattern.png'); */
-    
-    min-height: 100vh;
+    display: flex;
+    height: 100vh;
    
 
 }
@@ -9,4 +9,5 @@ body {
     display: grid;
     align-items: center;
     justify-content: center;
+    height: 60vh;
 }

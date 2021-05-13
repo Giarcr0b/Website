@@ -10,6 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'custom.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
     {% block stylesheet %}
     
      {% endblock stylesheet %}
@@ -23,7 +24,7 @@
         <div class="card card-banner">
             
                 <div class="col-sm-8 align-self-center banner-text">
-                    <h1 class="text-center display-3">{{ author.business }}</h1>
+                    <h1 class="text-center display-3" style="font-size: 5vw;">{{ author.business }}</h1>
                 </div>
                 
                 
@@ -95,7 +96,7 @@
         {% block page_content %}{% endblock %} {% block form_content%}{% endblock %}
 
     </div>
-   
+    
     <!-- Footer 
 ================================================== -->
     <!-- Site footer -->
@@ -116,7 +117,7 @@
                             <li><a href="{% url 'main:contact' %}">Contact</a></li>
                             <li><a href="{% url 'services:index' %}">Services</a></li>
                             <li><a href="{% url 'main:testimonials' %}">Testimonials</a></li>
-                            <li><a href="#">Sitemap</a></li>
+                        
                         </ul>
                     </div>
                 </div>
@@ -144,8 +145,8 @@
         {% endblock footer %}
     </div>
 
-
     {% endblock body %}
+    
     
 </body>
 <!-- Optional JavaScript -->
@@ -153,5 +154,21 @@
     <script src="{% static 'jquery-3.5.1.slim.min.js' %}"></script>
     <script src="{% static 'popper.min.js' %}"></script>
     <script src="{% static 'bootstrap.min.js' %}"></script>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = document.getElementById("get_in_touch");
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        }
+        </script>
 
 </html>

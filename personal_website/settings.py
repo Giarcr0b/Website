@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
+    'django.forms',
 
 
     'services.apps.ServicesConfig',
@@ -48,7 +51,11 @@ INSTALLED_APPS = [
     
     'crispy_forms',
     'widget_tweaks',
+    'captcha',
+    'easy_maps',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -160,3 +167,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media' 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
+
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
+
+EASY_MAPS_GOOGLE_KEY = config('GOOGLE_MAPS_API_KEY')

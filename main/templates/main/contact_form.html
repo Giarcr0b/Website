@@ -1,19 +1,41 @@
-{% extends "base.html" %} {% load widget_tweaks %} {% block page_content %}
+{% extends "base.html" %} {% load widget_tweaks %} {% load easy_maps_tags %} {% block page_content %}
 
+<script>
+    var element = document.getElementById('map');
+    var position_info = element.getBoundingClientRect();
+    var width = position_info.width;
+</script>
 <div class="card">
-    <div class="card-body">
+    <div class="card-body" id="map">
+        
         <h3 class="card-title">How to reach us</h3>
+        <br>
         <div class="flex row">
-            <div class="flex col-sm-6">
+            <div class="flex col-sm-4">
         <h5 class="card-subtitle mb-2 text-muted">Contact details</h5>
-        <p class="card-text">Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
-        <p class="card-text">Mobile: {{ author.mobile }}</p>
+        <p class="card-text"><span class="material-icons">email</span><a href="mailto:{{ author.email }}"> {{ author.email }}</a></p>
+        <p class="card-text"><span class="material-icons">call</span><a href="tel:{{ author.mobile }}"> {{ author.mobile }}</a></p>
+        <br>
+        
     </div>
-    <div class="flex col-sm-6">
+    <div class="flex col-sm-4">
         <h5 class="card-subtitle mb-2 text-muted">Social Links</h5>
-        <a href="#" class="card-link">Facebook</a>
-        <a href="#" class="card-link">LinkedIn</a>
+        <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="instagram" href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+        </ul>
+        
     </div>
+    <div class="flex col-sm-4">
+        <h5 class="card-subtitle mb-2 text-muted">Google map</h5>
+        <div>
+            {% easy_map "57.285051, -2.874634" 295 300  16 %}
+        </div>
+        
+    </div>
+    
 </div>
 </div>
 </div>

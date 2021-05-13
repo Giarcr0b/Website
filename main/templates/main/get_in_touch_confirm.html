@@ -6,10 +6,11 @@
 <link rel="stylesheet" href="{% static 'confirm.css' %}">
 {% endblock stylesheet %}
 {% block body %}
-<div class="message-box" style="border: solid;">
-    <h2 class="text-center">Thanks for getting in touch.</h2>
+<h2 class="text-center">Thanks for getting in touch.{{ message }}</h2>
+<div class="message-box">
+    
     <div class="d-flex justify-content-center">
-        <div class="col-lg-8 col-md-10 col-sm-12">
+        <div class="col-lg-10 col-md-10 col-sm-12">
             <div class="card text-center">
                 <div class="card-body">
                     <h3 class="card-title">We will be in touch about your query soon.</h3>

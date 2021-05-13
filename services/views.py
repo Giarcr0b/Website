@@ -1,6 +1,6 @@
 from django.views import generic
 from django.shortcuts import get_object_or_404, render
-from services.models import Service
+from services.models import Service, Component
 from main.forms import GetInTouch
 # Create your views here.
 
@@ -43,8 +43,10 @@ def index(request):
 
 def detail(request, service_id):
     service = get_object_or_404(Service, pk=service_id)
+    components = Component.objects.filter(services__pk=service_id)
     context = {
         'service': service,
+        'components': components,
         'title': 'Service Details',
         'form': GetInTouch()
     }

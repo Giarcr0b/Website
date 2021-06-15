@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="{% static 'custom.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
     {% block stylesheet %}
-    
-     {% endblock stylesheet %}
+
+    {% endblock stylesheet %}
 
     <title>{{ title }}</title>
 </head>
@@ -22,39 +22,41 @@
     <div></div>
     <div class="container-fluid container-banner">
         <div class="card card-banner">
-            
-                <div class="col-sm-8 align-self-center banner-text">
-                    <h1 class="text-center display-3" style="font-size: 5vw;">{{ author.business }}</h1>
-                </div>
-                
-                
+
+            <div class="col-sm-8 align-self-center banner-text">
+                <h1 class="text-center display-3" style="font-size: 5vw;">{{ author.business }}</h1>
+            </div>
+
+
         </div>
-        <br/>
+        <br />
         <div class="container">
-        
+
             {% block body %}
             {% block navigation %}
             <nav class="navbar navbar-expand-sm rounded">
-        
+
                 <div class="container-colapsed-menu">
-                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="line"></span> 
-                        <span class="line"></span> 
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="line"></span>
+                        <span class="line"></span>
                         <span class="line"></span>
                     </button>
                 </div>
-                
-    
-    
-    
-    
+
+
+
+
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    
+
                     <div class="container">
                         <ul class="navbar-nav lead container-menu">
                             <li class="nav-item ">
                                 <a class="nav-link" href="{% url 'main:index' %}">Home <span
-                                                    class="sr-only">(current)</span></a>
+                                        class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'main:about' %}">About</a>
@@ -73,17 +75,17 @@
                     </div>
                 </div>
                 {% endblock navigation %}
-    
-            
-    
+
+
+
             </nav>
-        </div>      
-    
+        </div>
+
     </div>
-    
+
 
     <div class="container">
-        <br/>
+        <br />
         <!-- Main hero unit for a primary marketing message or call to action -->
         <div class="jumbotron base-jumbotron">
             <h1 class="text-center">{{ author.business }}</h1>
@@ -96,7 +98,7 @@
         {% block page_content %}{% endblock %} {% block form_content%}{% endblock %}
 
     </div>
-    
+
     <!-- Footer 
 ================================================== -->
     <!-- Site footer -->
@@ -117,7 +119,7 @@
                             <li><a href="{% url 'main:contact' %}">Contact</a></li>
                             <li><a href="{% url 'services:index' %}">Services</a></li>
                             <li><a href="{% url 'main:testimonials' %}">Testimonials</a></li>
-                        
+
                         </ul>
                     </div>
                 </div>
@@ -146,29 +148,29 @@
     </div>
 
     {% endblock body %}
-    
-    
+
+
 </body>
 <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{% static 'jquery-3.5.1.slim.min.js' %}"></script>
-    <script src="{% static 'popper.min.js' %}"></script>
-    <script src="{% static 'bootstrap.min.js' %}"></script>
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-        
-        for (i = 0; i < coll.length; i++) {
-          coll[i].addEventListener("click", function() {
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{% static 'jquery-3.5.1.slim.min.js' %}"></script>
+<script src="{% static 'popper.min.js' %}"></script>
+<script src="{% static 'bootstrap.min.js' %}"></script>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
             this.classList.toggle("active");
             var content = document.getElementById("get_in_touch");
-            if (content.style.maxHeight){
-              content.style.maxHeight = null;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
             } else {
-              content.style.maxHeight = content.scrollHeight + "px";
+                content.style.maxHeight = content.scrollHeight + "px";
             }
-          });
-        }
-        </script>
+        });
+    }
+</script>
 
 </html>

@@ -3,6 +3,8 @@ from services.models import Service
 from django.urls import reverse
 
 # Create your models here.
+
+
 class Testimonial(models.Model):
     title = models.CharField(max_length=30)
     body = models.TextField()
@@ -10,6 +12,7 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Author(models.Model):
     firstName = models.CharField(max_length=30)
@@ -26,11 +29,12 @@ class Author(models.Model):
     def __str__(self):
         return self.firstName
 
+
 class Contact(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(blank=True)
     phone = models.CharField(max_length=30)
-    service_list =  Service.objects.all()
+    service_list = Service.objects.all()
     SERVICE_CHOICES = []
     for service in service_list:
         key = service.name
@@ -38,11 +42,8 @@ class Contact(models.Model):
         choice = (key, title)
         SERVICE_CHOICES.append(choice)
 
-            
-    
     type_of_service = models.CharField(choices=SERVICE_CHOICES, max_length=80)
     details = models.TextField()
 
     def get_absolute_url(self):
         return reverse('main:contact')
-

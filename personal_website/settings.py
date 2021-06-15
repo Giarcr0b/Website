@@ -46,13 +46,14 @@ INSTALLED_APPS = [
 
     'services.apps.ServicesConfig',
     'main.apps.MainConfig',
-    'projects.apps.ProjectsConfig',
-    'blog.apps.BlogConfig',
+    # 'projects.apps.ProjectsConfig',
+    # 'blog.apps.BlogConfig',
     
     'crispy_forms',
     'widget_tweaks',
     'captcha',
     'easy_maps',
+    'django_summernote',
 ]
 
 SITE_ID = 1
@@ -173,3 +174,5 @@ CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
 FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
 EASY_MAPS_GOOGLE_KEY = config('GOOGLE_MAPS_API_KEY')
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'

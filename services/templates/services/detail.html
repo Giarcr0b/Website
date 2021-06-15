@@ -1,39 +1,110 @@
 {% extends "base.html" %} {% load static %} {% block page_content %}
-<h1>{{ service.name }}</h1>
+<h1 class="text-center">{{ service.name }}</h1>
 <div class="row">
     <div class="col-md-8">
         {% if service.image.url != None %}
-        <img src="{{ service.image.url }}" alt="" width="100%"> {% endif %}
+        <img class="image-fluid rounded" src="{{ service.image.url }}" alt="" width="100%"> {% endif %}
     </div>
     <div class="col-md-4">
-        <h5>The Service:</h5>
-        <p>{{ service.title }}</p>
-        <br>
-        <h5>About the Service:</h5>
-        <p>{{ service.description }}</p>
+        <h4>The Service:</h4>
+        <h5>{{ service.title }}</h5>
+    </div>
+    <div class="col-md-12">
+        <h4>About the Service:</h4>
+        <h5>{{ service.description|safe }}</h5>
     </div>
 </div>
 {% if components %}
-<br/>
-<h5>How we can help</h5>
+<br />
+<h5>How I can help</h5>
 {% endif %}
 <div class="row">
     {% for component in components %}
+    {% if forloop.counter|divisibleby:"2" %}
     <div class="col-sm-12">
         <div class="card mb-4 services-index-card">
-            
-                <h4 class="card-header">
-                    {{ component.name }}
-                </h4>
-            
+
+            <h4 class="card-header text-right">
+                {{ component.name }}
+            </h4>
+
             <div class="card-body">
-                <p class="card-text">
-                    {{ component.description }}
-                </p>
+                <div class="flex row">
+                    <div class="flex col-sm-9">
+                        <h5 class="card-text">
+                            {{ component.description|safe }}
+                        </h5>
+                        <br>
+                        <h6>Want to hear more?
+                            <a href="mailto:{{ author.email }}">Drop me an email</a>,
+                            <a href="tel:{{ author.mobile }}">Call me</a> or
+                            <a href="{% url 'main:contact' %}">Fill in the Form</a>
+                        </h6>
+                    </div>
+                    <div class="flex col-sm-3 text-center">
+                        {% if component.image.url != None%}
+
+                        <img class="img-thumbnail" src="{{ component.image.url }}">
+
+                        {% endif %}
+                        <p class="text-right">
+                            <small class="text-muted">
+                                <a href="{{ component.image_lnk }}">Image</a>
+                                -<a href="{{ component.author_lnk }}">Author</a>
+                                -<a href="{{ component.cc_license_lnk }}">&#169</a>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+
             </div>
-            
+
         </div>
     </div>
+    {% else %}
+    <div class="col-sm-12">
+        <div class="card mb-4 services-index-card">
+
+            <h4 class="card-header">
+                {{ component.name }}
+            </h4>
+
+            <div class="card-body">
+                <div class="flex row">
+
+                    <div class="flex col-sm-3 text-center">
+                        {% if component.image.url != None%}
+
+                        <img class="img-thumbnail" src="{{ component.image.url }}">
+
+                        {% endif %}
+                        <p class="text-right">
+                            <small class="text-muted">
+                                <a href="{{ component.image_lnk }}">Image</a>
+                                -<a href="{{ component.author_lnk }}">Author</a>
+                                -<a href="{{ component.cc_license_lnk }}">&#169</a>
+                            </small>
+                        </p>
+                    </div>
+                    <div class="flex col-sm-9">
+                        <h5 class="card-text">
+                            {{ component.description|safe }}
+                        </h5>
+                        <br>
+                        <h6>Want to hear more?
+                            <a href="mailto:{{ author.email }}">Drop me an email</a>,
+                            <a href="tel:{{ author.mobile }}">Call me</a> or
+                            <a href="{% url 'main:contact' %}">Fill in the Form</a>
+                        </h6>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    {% endif %}
+
     {% endfor %}
 </div>
 
@@ -41,4 +112,4 @@
 
 
 
-{% endblock %}{% block form_content %}<br/>{% include "main/get_in_touch.html" %}{% endblock %}
+{% endblock %}{% block form_content %}<br />{% include "main/get_in_touch.html" %}{% endblock %}

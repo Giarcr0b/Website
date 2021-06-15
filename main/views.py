@@ -4,13 +4,11 @@ from django.views import generic
 from django.core.mail import send_mail
 from main.models import Testimonial, Author, Contact
 from services.models import Service
-from projects.models import Project
+# from projects.models import Project
 from django.urls import reverse_lazy
 from main.forms import GetInTouch, ContactForm
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
-
-
 
 
 # Create your views here.
@@ -23,20 +21,17 @@ class indexView(generic.FormView):
     initial = {'key': 'value'}
     template_name = 'main/index.html'
     success_url = '/get_in_touch_confirm'
-    
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['service_list'] = Service.objects.order_by('order')[0:3]
-        context['project_list'] = Project.objects.order_by('pk')[0:3]
+        # context['project_list'] = Project.objects.order_by('pk')[0:3]
         context['testimonial_list'] = Testimonial.objects.order_by('pk')[0:3]
         context['title'] = 'Home'
-        
 
         return context
 
-    
-    
+
 # About page view uses detail view
 
 class AboutView(generic.FormView):
@@ -54,14 +49,13 @@ class AboutView(generic.FormView):
 
 # Testimonials view lists testimonials so use List view
 
+
 class TestimonialView(generic.FormView):
 
     form_class = GetInTouch
     initial = {'key': 'value'}
     template_name = 'main/testimonials.html'
     success_url = '/get_in_touch_confirm'
-    
-    
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -86,6 +80,8 @@ class TestimonialView(generic.FormView):
         context['title'] = 'Contact'
         return context
      """
+
+
 class ContactView(generic.FormView):
 
     form_class = ContactForm
@@ -93,12 +89,10 @@ class ContactView(generic.FormView):
     template_name = 'main/contact_form.html'
     success_url = '/get_in_touch_confirm'
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Contact'
         return context
-    
 
     """ def get(self, request, *args, **kwargs):
         form = self.form_class(initial=self.initial)
@@ -115,7 +109,6 @@ class ContactView(generic.FormView):
 
         return render(request, self.template_name, {'form': form, 'title': title}) """
 
-    
 
 """ def contact_form(request):
 
@@ -145,6 +138,7 @@ class ContactView(generic.FormView):
         form.send_email()
         return super().form_valid(form) """
 
+
 def get_in_touch(request):
     if request.method == 'POST':
 
@@ -167,12 +161,11 @@ def get_in_touch(request):
 
     return render(request, 'main/get_in_touch.html', {'form': form})
 
+
 def get_in_touch_confirm(request):
-
-
 
     context = {
         'title': 'Confirmation',
- 
+
     }
     return render(request, 'main/get_in_touch_confirm.html', context)

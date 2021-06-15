@@ -1,14 +1,15 @@
 from django.contrib import sitemaps
 from django.urls import reverse
 from services.models import Service
-from projects.models import Project
+# from projects.models import Project
 
 
 
 class StaticViewSitemap(sitemaps.Sitemap):
 
     def items(self):
-        return ['main:index', 'main:about', 'main:contact', 'main:testimonials', 'services:index', 'projects:index']
+        return ['main:index', 'main:about', 'main:contact', 'main:testimonials', 'services:index']
+        # removed this from aray - , 'projects:index'
 
     def location(self, item):
         return reverse(item)

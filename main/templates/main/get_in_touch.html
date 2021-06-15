@@ -1,36 +1,38 @@
- {% load widget_tweaks %}
- 
+{% load widget_tweaks %}
+
 <div class="card card-form">
     <div class="card-body">
-    <p class="lead text-center">
-        Get in Touch
-    </p>
-    <form method="post" novalidate>
-        {% csrf_token %} 
-        <div class="row">
-        {% for field in form %}
-        <div class="col-sm-6">
-        <div class="form-group">
-            
-    
-            {{ field.label_tag }} {% if form.is_bound %} {% if field.errors %} {% render_field field class="form-control is-invalid" %} {% for error in field.errors %}
-            <div class="invalid-feedback">
-                {{ error }}
+        <p class="lead text-center">
+            Get in Touch
+        </p>
+        <form method="post" novalidate>
+            {% csrf_token %}
+            <div class="row">
+                {% for field in form %}
+                <div class="col-sm-6">
+                    <div class="form-group">
+
+
+                        {{ field.label_tag }} {% if form.is_bound %} {% if field.errors %} {% render_field field
+                        class="form-control is-invalid" %} {% for error in field.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                        {% endfor %} {% else %} {% render_field field class="form-control is-valid" %} {% endif %} {%
+                        else %} {% render_field field class="form-control" %} {% endif %} {% if field.help_text %}
+                        <small class="form-text text-muted">
+                            {{ field.help_text }}
+                        </small> {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="col-sm-6 text-right">
+                    <button type="submit" class="btn btn-get-in-touch">Get in touch</button>
+                </div>
             </div>
-            {% endfor %} {% else %} {% render_field field class="form-control is-valid" %} {% endif %} {% else %} {% render_field field class="form-control" %} {% endif %} {% if field.help_text %}
-            <small class="form-text text-muted">
-                {{ field.help_text }}
-              </small> {% endif %}
-            </div>
-        </div>
-        {% endfor %}
-        <div class="col-sm-6 text-right">
-            <button type="submit" class="btn btn-get-in-touch">Get in touch</button>
-        </div>
+
+        </form>
     </div>
-    
-    </form>
-</div>
 </div>
 
-<br/>
+<br />

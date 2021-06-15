@@ -4,6 +4,7 @@ from services.models import Service, Component
 from main.forms import GetInTouch
 # Create your views here.
 
+
 class IndexView(generic.FormView):
 
     form_class = GetInTouch
@@ -14,9 +15,9 @@ class IndexView(generic.FormView):
         context = super().get_context_data(**kwargs)
         context['service_list'] = Service.objects.order_by('order')
         context['title'] = 'Services'
-        
 
         return context
+
 
 class DetailView(generic.DetailView):
 
@@ -24,14 +25,14 @@ class DetailView(generic.DetailView):
     form_class = GetInTouch
     initial = {'key': 'value'}
     template_name = 'services/index.html'
-    
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # context['service'] = get_object_or_404(Service, pk=service_id)
         context['title'] = 'Services'
-        
+
         return context
+
 
 def index(request):
     services = Service.objects.order_by('order')
@@ -40,6 +41,7 @@ def index(request):
         'title': 'Services',
     }
     return render(request, 'services/index.html', context)
+
 
 def detail(request, service_id):
     service = get_object_or_404(Service, pk=service_id)
@@ -51,4 +53,3 @@ def detail(request, service_id):
         'form': GetInTouch()
     }
     return render(request, 'services/detail.html', context)
-

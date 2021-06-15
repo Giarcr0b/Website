@@ -19,12 +19,12 @@ from django.urls import path, include
 from django.contrib.sitemaps import GenericSitemap
 from django.contrib.sitemaps.views import sitemap
 from personal_website import settings
-from .sitemaps import StaticViewSitemap, ProjectsSitemap, ServicesSitemap
+from .sitemaps import StaticViewSitemap, ServicesSitemap
 
 sitemaps = {
     'static': StaticViewSitemap,
     'services': ServicesSitemap,
-    'projects': ProjectsSitemap,
+    # 'projects': ProjectsSitemap,
     
 }
 
@@ -32,11 +32,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path("", include("main.urls")),
-    path("projects/", include("projects.urls")),
-    path("blog/", include("blog.urls")),
+    # path("projects/", include("projects.urls")),
+    # path("blog/", include("blog.urls")),
     path("services/", include("services.urls")),
     path('captcha/', include('captcha.urls')),
-]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('summernote/', include('django_summernote.urls')),
+]  
+if settings.DEBUG: 
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 """ path("", include("main.urls")),
     path("projects/", include("projects.urls")),

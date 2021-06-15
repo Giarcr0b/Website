@@ -203,6 +203,7 @@ nav {
 .about-jumbotron {
     background-color: #4DA8DA;
     color: black;
+    text-align: left;
 }
 
 /* Contact page CSS classes */
@@ -432,6 +433,9 @@ a.badge-info:focus {
         margin-right: 0;
         font-weight: 600
     }
+    .showhide {
+        display:none;
+    }
 }
 
 .facebook {
@@ -499,13 +503,13 @@ a.badge-info:focus {
 
 .carousel-control-prev,
 .carousel-control-next {
-    bottom: 90%;
+    bottom: -100%;
     filter: invert(100%);
     /* Aligns it at the top */
 }
 
 .carousel-indicators {
-    bottom: 85%;
+    bottom: -5%;
     filter: invert(100%);
     /* Aligns it at the top */
 }

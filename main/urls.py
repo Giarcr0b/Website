@@ -26,4 +26,4 @@ urlpatterns = [
     path("testimonials/", views.TestimonialView.as_view(), name="testimonials"),
     path("get_in_touch/", views.get_in_touch, name="get_in_touch"),
     path("get_in_touch_confirm/", views.get_in_touch_confirm, name="confirm"),
-] 
+]

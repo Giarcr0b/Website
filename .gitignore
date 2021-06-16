@@ -140,3 +140,8 @@ cython_debug/
 # SQLite database files
 
 *.sqlite3
+
+# key files
+my-website
+my-website.pub
+db.json

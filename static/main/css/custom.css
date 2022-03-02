@@ -3,10 +3,10 @@
 /* Site wide custom CSS */
 
 
-body {
-    background: rgb(0,124,199);
-background: linear-gradient(155deg, rgba(0,124,199,1) 0%, rgba(238,251,251,1) 45%, rgba(0,124,199,1) 100%);
-}
+/* body {
+    background: #99DDFF;
+background: linear-gradient(155deg, rgba(238,238,238,1) 0%, #99DDFF 45%, rgba(238,238,238,1) 100%);
+} */
 
 .bg {
     height: 100vmax;
@@ -77,7 +77,7 @@ clip-path: polygon(12% 10%, 82% 17%, 92% 63%, 28% 85%, 79% 95%, 10% 49%, 59% 5%,
 }
 
 .card-form {
-    background-color: #007cc7;
+    background-color: #4D61DA;
     color: white;
     border-color: #203647;
     border-width: medium;
@@ -85,7 +85,7 @@ clip-path: polygon(12% 10%, 82% 17%, 92% 63%, 28% 85%, 79% 95%, 10% 49%, 59% 5%,
 
 .card-banner {
     background: url('main/img/backgrounds/banner.png');
-    background-color:  #007cc7;
+    background-color:  rgba(238,251,251,1);
     background-blend-mode:luminosity;
     height:auto;
     background-position: center;
@@ -107,7 +107,7 @@ clip-path: polygon(12% 10%, 82% 17%, 92% 63%, 28% 85%, 79% 95%, 10% 49%, 59% 5%,
 }
 
 .base-jumbotron {
-    background-color: #007cc7;
+    background-color: #4D61DA;
     color: white;
 }
 
@@ -166,7 +166,9 @@ nav {
 /* Home page CSS classes */
 
 .home-slider-card {
-    background-color:white;
+    /* background-color:white; */
+    background: #4DDAC6;
+    background: linear-gradient(155deg, rgba(238,238,238,1) 0%, #4DDAC6 45%, rgba(238,238,238,1) 100%);
     min-height: 24rem;
 }
 
@@ -193,7 +195,7 @@ nav {
 
 .project-img {
 
-    background-color: #007cc7;
+    background-color: #4D61DA;
     background-blend-mode: screen;
 }
 
@@ -212,13 +214,13 @@ nav {
     background-color: #203647;
     color: white;
     /* border-style: solid;
-    border-color: #007cc7;
+    border-color: #4D61DA;
     border-width: medium; */
 
 }
 
 .btn-form {
-    background-color: #007cc7;
+    background-color: #4D61DA;
     color: white;
 }
 

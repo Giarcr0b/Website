@@ -6,7 +6,8 @@
 
     {% for service in service_list %}
     <div class="col-sm-6">
-        <div class="card mb-4 services-index-card">
+
+        <div href="{% url 'services:detail' service.id %}" class="card mb-4 services-index-card">
             <h4 class="card-header">{{ service.name }}</h4>
 
 
@@ -21,11 +22,13 @@
                 <a href="{% url 'services:detail' service.id %}" class="btn btn-card">
                     Read More
                 </a>
+                <a href="{% url 'services:detail' service.id %}" class="stretched-link"></a>
             </div>
             <div class="card-footer">
                 <h3>From £{{ service.rate }}</h3>
             </div>
         </div>
+
     </div>
 
 

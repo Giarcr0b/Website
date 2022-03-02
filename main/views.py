@@ -150,11 +150,16 @@ def get_in_touch(request):
             sender = form.cleaned_data['sender']
             cc_myself = form.cleaned_data['cc_myself']
 
-            recipients = ['info@example.com']
+            recipients = ['robertson_craig@btopenworld.com']
             if cc_myself:
                 recipients.append(sender)
 
-            send_mail(subject, message, sender, recipients)
+            send_mail(
+                "It works!!",
+                "This will get sent through Mailgun",
+                "Anymail Sender <craig@muirfieldsoftwareservices.co.uk>",
+                ["robertson_craig@btopenworld.com"]
+            )
             # return redirect('home')
     else:
         form = GetInTouch()

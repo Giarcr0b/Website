@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'captcha',
     'easy_maps',
     'django_summernote',
+    'anymail',
 ]
 
 SITE_ID = 1
@@ -170,15 +171,18 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media' )
 
-EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
-EMAIL_HOST = config('EMAIL_HOST', default='')
-EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
+MAILGUN_API_KEY = config('MAILGUN_API')
+ANYMAIL = {
+    "MAILGUN_API_KEY": MAILGUN_API_KEY,
+    "MAILGUN_API_URL": 'https://api.eu.mailgun.net/v3',
+    "MAILGUN_SENDER_DOMAIN": 'mg.muirfieldsoftwareservices.co.uk',
+}
 
-DEFAULT_FROM_EMAIL = 'Muirfield Software Services <noreply@muirfieldsoftwareservices.co.uk>'
+EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+DEFAULT_FROM_EMAIL = 'noreply@muirfieldsoftwareservices.co.uk'
+SERVER_EMAIL = 'admin@muirfieldsoftwareservices.co.uk'
 EMAIL_SUBJECT_PREFIX = '[Muirfield Software Services]'
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -189,3 +193,4 @@ FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 EASY_MAPS_GOOGLE_KEY = config('GOOGLE_MAPS_API_KEY')
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+

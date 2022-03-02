@@ -4,7 +4,7 @@
 <!--Carousel
 	================================================== -->
 
-<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
     <ol class="carousel-indicators showhide">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -31,6 +31,7 @@
                         <a href="{% url 'services:detail' service.id %}" class="btn btn-card">
                             Read More
                         </a>
+                        <a href="{% url 'services:detail' service.id %}" class="stretched-link"></a>
                     </div>
                 </div>
 
@@ -55,6 +56,7 @@
                         <a href="{% url 'main:testimonials' %}" class="btn btn-card">
                             Read More
                         </a>
+                        <a href="{% url 'main:testimonials' %}" class="stretched-link"></a>
                     </div>
                     <div class="card-footer">{{ testimonial.author }}</div>
                 </div>
